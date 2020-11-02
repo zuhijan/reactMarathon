@@ -3,6 +3,8 @@ import cn from 'classnames';
 import s from './App.module.scss';
 
 const App: FC = () => {
+  console.log('ws==s');
+
   return <div className={cn(s.header)}>THiS iiiis SPARTA!</div>;
 };
 
