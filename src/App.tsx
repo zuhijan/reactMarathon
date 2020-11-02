@@ -1,15 +1,9 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
-import s from "./App.module.scss";
-import {one} from "./example";
+import s from './App.module.scss';
 
 const App: FC = () => {
-    one();
-    return (
-        <div className={cn(s.header)}>
-            THiS iiiis SPARTA!
-        </div>
-    )
-}
+  return <div className={cn(s.header)}>THiS iiiis SPARTA!</div>;
+};
 
 export default App;
