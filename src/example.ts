@@ -30,7 +30,7 @@ const MyHometask: IMyHomeTask = {
 interface MyArray<T> {
   [N: number]: T;
 
-  reduce<U>(fn: (reducer: T, item: T, index: number, arr: MyArray<T>) => U, initialValue?: T): U;
+  reduce<U>(fn: (reducer: T, item: T, index: number, arr: MyArray<T>) => U, initialValue?: U): U;
 }
 
 const tsArray: MyArray<number> = [1, 2, 3, 22, 4];
