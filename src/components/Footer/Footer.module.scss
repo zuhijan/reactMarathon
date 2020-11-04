@@ -1,0 +1,23 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper {
+  max-width: 1240px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.text {
+  font-family: sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0;
+  text-align: left;
+}
