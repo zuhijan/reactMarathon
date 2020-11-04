@@ -6,6 +6,7 @@ const { NODE_ENV } = process.env;
 module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+    modules: [path.resolve('./src'), path.resolve('./node_modules')],
   },
   mode: NODE_ENV || 'development',
   entry: path.resolve(__dirname, 'src/index.tsx'),
@@ -39,7 +40,13 @@ module.exports = {
               },
             },
           },
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              additionalData: '@import "./src/assets/styles/global.scss";',
+            },
+          },
         ],
       },
       {

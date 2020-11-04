@@ -1,8 +1,7 @@
-// @ts-ignore
 import React, { FC } from 'react';
 import cn from 'classnames';
+import logo from 'assets/images/Logo.png';
 import s from './Header.module.scss';
-import logo from '../../../public/images/Logo.png';
 
 interface IHeader {}
 
