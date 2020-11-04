@@ -7,6 +7,7 @@ import logo from '../../../public/images/Logo.png';
 interface IHeader {}
 
 const Header: FC<IHeader> = () => {
+  console.log('sdfs#');
   return (
     <header className={s.header}>
       <div className={s.wrapper}>
