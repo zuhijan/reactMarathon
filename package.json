@@ -2,9 +2,9 @@
   "name": "reactMarathon",
   "version": "1.0.0",
   "scripts": {
-    "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
-    "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
-    "start": "env NODE_ENV=development webpack-dev-server"
+    "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server"
   },
   "repository": "git@github.com:zuhijan/reactMarathon.git",
   "author": "Egor <zuhijan@yandex.ru>",
@@ -20,6 +20,7 @@
     "@types/react-dom": "^16.9.9",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^5.0.0",
     "css-modules-typescript-loader": "^4.0.1",
     "eslint": "^7.12.1",
