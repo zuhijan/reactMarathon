@@ -1,17 +1,8 @@
 import React, { FC } from 'react';
-import cn from 'classnames';
-import s from './App.module.scss';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import HomePage from './pages/Home';
 
 const App: FC = () => {
-  return (
-    <>
-      <Header />
-      <div className={cn(s.content, '')}>THiS iiiis SPARTA!</div>
-      <Footer />
-    </>
-  );
+  return <HomePage />;
 };
 
 export default App;
