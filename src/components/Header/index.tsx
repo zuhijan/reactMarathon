@@ -18,7 +18,7 @@ const MENU: IMenu[] = [
   {
     id: 2,
     value: 'Pokédex',
-    link: '#',
+    link: '/pokedex',
   },
   {
     id: 3,
