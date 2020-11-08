@@ -1,0 +1,24 @@
+@import '../../varibales';
+.root {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 84px;
+  letter-spacing: 4px;
+  color: #000000;
+}
+
+h1 {
+  font-size: $h1;
+}
+
+h2 {
+  font-size: $h2;
+}
+
+h3 {
+  font-size: $h3;
+}
+
+h4 {
+  font-size: $h4;
+}
