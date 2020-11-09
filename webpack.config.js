@@ -1,17 +1,23 @@
 const path = require('path');
 const HTMLWebpackPlugins = require('html-webpack-plugin');
 
-const NODE_ENV = process.env.NODE_ENV;
+const { NODE_ENV } = process.env;
 
 module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+    modules: [path.resolve('./src'), path.resolve('./node_modules')],
   },
-  mode: NODE_ENV ? NODE_ENV : 'development',
+  mode: NODE_ENV || 'development',
   entry: path.resolve(__dirname, 'src/index.tsx'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
+  },
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/,
+    poll: 1000,
   },
   module: {
     rules: [
@@ -28,7 +34,7 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'style-loader',
-          'css-modules-typescript-loader?modules',
+          // 'css-modules-typescript-loader?modules',
           {
             loader: 'css-loader',
             options: {
@@ -39,19 +45,34 @@ module.exports = {
               },
             },
           },
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              additionalData: '@import "./src/assets/styles/global.scss";',
+            },
+          },
         ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: 'dist/images/[name]__[local]__[hash:base64:7].[ext]',
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
             },
           },
         ],
+      },
+      {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        use: ['url-loader'],
       },
     ],
   },
@@ -64,6 +85,7 @@ module.exports = {
     port: 3000,
     open: true,
     hot: true,
+    historyApiFallback: true,
   },
   devtool: 'source-map',
 };

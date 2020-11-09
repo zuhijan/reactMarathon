@@ -1,16 +1,14 @@
 import React, { FC } from 'react';
-import cn from 'classnames';
-import s from './App.module.scss';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter, Route } from 'react-router-dom';
+import HomePage from './pages/Home';
+import Pokedex from './pages/Pokedex';
 
 const App: FC = () => {
   return (
-    <>
-      <Header />
-      <div className={cn(s.content, '')}>THiS iiiis SPARTA!</div>
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Route exact path="/" render={() => <HomePage />} />
+      <Route exact path="/pokedex" render={() => <Pokedex />} />
+    </BrowserRouter>
   );
 };
 

@@ -11,10 +11,11 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['prettier', 'prettier', 'react', '@typescript-eslint'],
+  plugins: ['prettier', 'react', '@typescript-eslint'],
   rules: {
+    'react/prop-types': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
-    'no-console': 'warn',
+    'no-console': 'error',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx', '.ts', '.js'] }],
     'import/extensions': [
       'error',
@@ -31,6 +32,10 @@ module.exports = {
     'import/resolver': {
       webpack: {
         config: 'webpack.config.js',
+      },
+      node: {
+        paths: ['./src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },
