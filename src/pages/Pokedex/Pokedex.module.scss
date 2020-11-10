@@ -4,3 +4,13 @@
   min-height: 100vh;
   max-height: 100vh;
 }
+
+.cards {
+  max-width: 1125px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 351px);
+  grid-row-gap: 45px;
+  grid-column-gap: 34px;
+  margin: 0 auto;
+  justify-content: center;
+}

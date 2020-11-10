@@ -1,17 +1,19 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import Button from '../../components/Button';
-import Header from '../../components/Header';
+import Header from 'components/Header';
+import Footer from 'components/Footer/Footer';
+import PokemonCard from 'components/PokemonCard';
 import s from './Pokedex.module.scss';
-import Footer from '../../components/Footer/Footer';
+import pokemons from './pokemons';
 
 const Pokedex = () => {
   return (
     <div className={s.root}>
       <Header />
-      <NavLink to="/">
-        <Button onClick={() => {}}> Назад на Главную </Button>
-      </NavLink>
+      <div className={s.cards}>
+        {pokemons.map(({ id, name, stats, types, img }) => (
+          <PokemonCard key={id} name={name} stats={stats} types={types} img={img} />
+        ))}
+      </div>
       <Footer />
     </div>
   );

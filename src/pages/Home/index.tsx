@@ -6,6 +6,7 @@ import Layout from 'components/Layout';
 import Parallax from 'components/Parallax';
 import Footer from 'components/Footer/Footer';
 import Heading from 'components/Heading';
+import { navigate } from 'hookrouter';
 import s from './Home.module.scss';
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
             <b>Find</b> all your favorite <b>Pokemon</b>
           </Heading>
           <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
-          <Button>See pokemons</Button>
+          <Button onClick={() => navigate('/pokedex')}>See pokemons</Button>
         </div>
         <div className={s.contentParallax}>
           <Parallax />
