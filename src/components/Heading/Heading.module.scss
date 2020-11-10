@@ -2,7 +2,6 @@
 .root {
   font-style: normal;
   font-weight: normal;
-  line-height: 84px;
   letter-spacing: 4px;
   color: #000000;
 }
@@ -21,4 +20,8 @@ h3 {
 
 h4 {
   font-size: $h4;
+}
+
+h5 {
+  font-size: $h5;
 }

@@ -4,7 +4,7 @@ import s from './Heading.module.scss';
 
 interface IHeading {
   className?: string;
-  variant?: 'h1' | 'h2' | 'h3' | 'h4';
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
 }
 
 const Heading: React.FC<IHeading> = ({ children, className = null, variant = 'h1' }) => {
@@ -15,6 +15,8 @@ const Heading: React.FC<IHeading> = ({ children, className = null, variant = 'h1
       return <h3 className={cn(s.root, className)}>{children}</h3>;
     case 'h4':
       return <h4 className={cn(s.root, className)}>{children}</h4>;
+    case 'h5':
+      return <h5 className={cn(s.root, className)}>{children}</h5>;
     default:
       return <h1 className={cn(s.root, className)}>{children}</h1>;
   }

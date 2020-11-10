@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 import Header from 'components/Header';
 import Button from 'components/Button';
@@ -19,9 +18,7 @@ const Home = () => {
             <b>Find</b> all your favorite <b>Pokemon</b>
           </Heading>
           <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
-          <NavLink style={{ textDecoration: 'none' }} to="/pokedex">
-            <Button>See pokemons</Button>
-          </NavLink>
+          <Button>See pokemons</Button>
         </div>
         <div className={s.contentParallax}>
           <Parallax />
