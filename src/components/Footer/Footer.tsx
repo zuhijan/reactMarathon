@@ -5,7 +5,7 @@ interface IFooter {}
 
 const Footer: FC<IFooter> = () => {
   return (
-    <footer className={s.footer}>
+    <footer className={s.root}>
       <div className={s.wrapper}>
         <span className={s.text} role="img" aria-label="Make with love">
           Make with ❤️

@@ -20,9 +20,7 @@ const Home = () => {
           </Heading>
           <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
           <NavLink style={{ textDecoration: 'none' }} to="/pokedex">
-            <Button backgroundColor="yellow" width="100%" size="small" onClick={() => {}}>
-              See pokemons
-            </Button>
+            <Button>See pokemons</Button>
           </NavLink>
         </div>
         <div className={s.contentParallax}>

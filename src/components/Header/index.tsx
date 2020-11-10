@@ -38,14 +38,14 @@ const Header: FC<IHeader> = () => {
         <div className={s.pokemonLogo}>
           <PokemonLogoSvg />
         </div>
+        <nav className={s.menuWrap}>
+          {MENU.map(({ id, value, link }) => (
+            <a key={id} href={link} className={s.menuLink}>
+              {value}
+            </a>
+          ))}
+        </nav>
       </div>
-      <nav className={s.menuWrap}>
-        {MENU.map(({ id, value, link }) => (
-          <a key={id} href={link} className={s.menuLink}>
-            {value}
-          </a>
-        ))}
-      </nav>
     </header>
   );
 };
