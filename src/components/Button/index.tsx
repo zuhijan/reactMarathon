@@ -4,7 +4,7 @@ import cn from 'classnames';
 import s from './Button.module.scss';
 
 interface IButton {
-  onClick(event: React.MouseEvent<HTMLButtonElement>): void;
+  onClick?(event: React.MouseEvent<HTMLButtonElement>): void;
   backgroundColor?: string;
   width?: string | number;
   size?: 'small';

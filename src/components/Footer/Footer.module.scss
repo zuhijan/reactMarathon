@@ -1,11 +1,14 @@
-.footer {
+.root {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
 .wrapper {
-  max-width: 1240px;
+  max-width: 1125px;
   width: 100%;
   display: flex;
   justify-content: space-between;

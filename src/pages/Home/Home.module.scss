@@ -3,15 +3,15 @@
 .root {
   overflow: hidden;
   min-height: 100vh;
+  max-height: 100vh;
   background: linear-gradient(180deg, $third 0%, $primary 100%);
 }
 
 .contentWrap {
-  //position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 877px;
+  min-height: 777px;
 }
 
 .contentText {
