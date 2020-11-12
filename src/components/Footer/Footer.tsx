@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
 import s from './Footer.module.scss';
 
-interface IFooter {}
-
-const Footer: FC<IFooter> = () => {
+const Footer: FC = () => {
   return (
     <footer className={s.root}>
       <div className={s.wrapper}>
@@ -16,4 +14,4 @@ const Footer: FC<IFooter> = () => {
   );
 };
 
-export default Footer;
+export default React.memo(Footer);

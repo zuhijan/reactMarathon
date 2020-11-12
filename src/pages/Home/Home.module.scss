@@ -2,9 +2,8 @@
 
 .root {
   overflow: hidden;
-  min-height: 100vh;
-  max-height: 100vh;
   background: linear-gradient(180deg, $third 0%, $primary 100%);
+  height: calc(100vh - 93px);
 }
 
 .contentWrap {
