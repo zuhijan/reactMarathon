@@ -1,14 +1,7 @@
 import React from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer/Footer';
 
 const Documentation = () => {
-  return (
-    <div>
-      <Header />
-      <Footer />
-    </div>
-  );
+  return <div>Documentation</div>;
 };
 
 export default Documentation;
