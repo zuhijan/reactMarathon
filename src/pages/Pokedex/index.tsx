@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
 import PokemonCard from 'components/PokemonCard';
 import s from './Pokedex.module.scss';
+import { IPokemons, PokemonsRequest } from '../../interface/pokemons';
 import useData from '../../hook/getData';
+
+interface IQuery {
+  name?: string;
+}
 
 const Pokedex = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [query, setQuery] = useState({});
+  const [query, setQuery] = useState<IQuery>({});
 
-  const { data, isLoading, isError } = useData('getPokemons', query, [searchValue]);
+  const { data, isLoading, isError } = useData<IPokemons>('getPokemons', query, [searchValue]);
 
   if (isError) return <div>Something wrong</div>;
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
-    setQuery((v) => ({
-      ...v,
+    setQuery((state: IQuery) => ({
+      ...state,
       name: e.target.value,
     }));
   };
@@ -29,7 +34,7 @@ const Pokedex = () => {
         <>
           {data && (
             <div className={s.cards}>
-              {data.pokemons.map(({ id, name, stats, types, img }) => (
+              {data.pokemons.map(({ id, name, stats, types, img }: PokemonsRequest) => (
                 <PokemonCard key={id} name={name} stats={stats} types={types} img={img} />
               ))}
             </div>
