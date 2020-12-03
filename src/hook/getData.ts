@@ -1,43 +1,16 @@
 import { useEffect, useState } from 'react';
 import req from '../utils/request';
 
-interface IPokemonsData {
-  total: number;
-  count: number;
-  offset: string;
-  limit: number;
-  pokemons: {
-    nameClean: string;
-    abilities: string[];
-    stats: {
-      hp: number;
-      attack: number;
-      defense: number;
-      'special-attack': number;
-      'special-defense': number;
-      speed: number;
-    };
-    types: string[];
-    img: string;
-    name: string;
-    baseExperience: number;
-    height: number;
-    id: number;
-    isDefault: boolean;
-    order: number;
-    weight: number;
-  }[];
-}
-const useData = (endpoint: string, query: object, deps: any[] = []) => {
-  const [data, setData] = useState<IPokemonsData | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
+const useData = <T>(endpoint: string, query: object, deps: any[] = []) => {
+  const [data, setData] = useState<T | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isError, setIsError] = useState<boolean>(false);
 
   useEffect(() => {
     setIsLoading(true);
-    const getData = async () => {
+    const getData = async (): Promise<void> => {
       try {
-        const result = await req(endpoint, query);
+        const result = await req<T>(endpoint, query);
         setData(result);
       } catch (e) {
         setIsError(true);
@@ -46,6 +19,7 @@ const useData = (endpoint: string, query: object, deps: any[] = []) => {
       }
     };
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
   return { data, isLoading, isError };
 };
